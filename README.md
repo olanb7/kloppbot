@@ -5,9 +5,6 @@ A little 5-a-side organising bot. Because there's always one that doesn't listen
 
 ## Usage
 
-[[https://github.com/olanb7/kloppbot/blob/master/screenshot.png|alt=screenshot]]
+![kloppbot](https://raw.githubusercontent.com/olanb7/kloppbot/master/screenshot.png)
 
-> kloppbot, we've a game this Wednesday at 1pm.
-> i'll play
-> who's playing?
-> can i see the fixture list?
+Just a quick hack right now. Potential to be more useful than that excel file though.
