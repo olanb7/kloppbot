@@ -9,9 +9,8 @@ const RTM_EVENTS      = require('@slack/client').RTM_EVENTS;
 const MemoryDataStore = require('@slack/client').MemoryDataStore;
 
 const Events = require('./event');
-const MessageHelpers = require('./message-helpers');
 
-var ADMINS = ['obyrne'];
+var ADMINS = ['obyrne', 'pblyth'];
 
 const momentCalFmt = {
     sameDay: '[today] at ',
@@ -96,7 +95,7 @@ class Bot {
     this.slack.sendMessage('Ok, ja, I\'ll see who can play on ' + moment(date).format('lll'), message.channel);
     this.events.add(date);
 
-    let reminder = moment(date).subtract(20, 'mins');
+    let reminder = moment(date).subtract(20, 'minutes');
 
     // schedule a reminder
     rx.Scheduler.default.scheduleFuture('world', reminder.toDate(), (scheduler, x) => {
@@ -109,7 +108,7 @@ class Bot {
     var user = this.slack.dataStore.getUserById(message.user);
 
     if (this.events.addParticipant(user.name)) {
-      this.slack.sendMessage('Great ' + user.name + ', you\'re signed up!', message.channel);
+      this.slack.sendMessage('Gut. ' + user.name + ', you\'re signed up.', message.channel);
     } else {
       this.slack.sendMessage('You\'ve already signed up ' + user.name, message.channel);
     }
